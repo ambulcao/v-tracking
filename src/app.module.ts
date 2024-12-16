@@ -2,7 +2,7 @@ import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { MapsModule } from './maps/maps.module';
-import { PlacesController } from './places/places.controller';
+import { PlacesController } from './maps/places/places.controller';
 
 @Module({
   imports: [MapsModule],
