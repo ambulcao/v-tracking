@@ -2,11 +2,16 @@ import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { MapsModule } from './maps/maps.module';
-import { PlacesController } from './maps/places/places.controller';
+import { ConfigModule } from '@nestjs/config';
 
 @Module({
-  imports: [MapsModule],
-  controllers: [AppController, PlacesController],
+  imports: [
+    ConfigModule.forRoot({
+      isGlobal: true,
+    }),
+    MapsModule,
+  ],
+  controllers: [AppController],
   providers: [AppService],
 })
 export class AppModule {}
